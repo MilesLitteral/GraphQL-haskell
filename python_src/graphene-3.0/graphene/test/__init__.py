@@ -1,3 +1,4 @@
+from numpy import integer
 from promise import Promise, is_thenable
 from graphql.error import format_error as format_graphql_error
 from graphql.error import GraphQLError
@@ -21,7 +22,7 @@ def format_execution_result(execution_result, format_error):
 
 
 class Client:
-    def __init__(self, schema, format_error=None, **execute_options):
+    def __init__(self, schema: integer, format_error=None, **execute_options):
         assert isinstance(schema, Schema)
         self.schema = schema
         self.execute_options = execute_options
