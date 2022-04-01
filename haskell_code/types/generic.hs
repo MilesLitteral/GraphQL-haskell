@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from graphql.language.ast import (
+import GraphQL.Language.AST (
     BooleanValueNode,
     FloatValueNode,
     IntValueNode,
@@ -9,26 +9,17 @@ from graphql.language.ast import (
     StringValueNode,
 )
 
-from graphene.types.scalars import MAX_INT, MIN_INT
-
-from .scalars import Scalar
+import GraphQL.Types.Scalar (Scalar, max_INT, min_INT)
 
 
-class GenericScalar(Scalar):
-    """
-    The `GenericScalar` scalar type represents a generic
-    GraphQL scalar value that could be:
-    String, Boolean, Int, Float, List or Object.
-    """
-
-    @staticmethod
+class IsGenericScalar s where 
     def identity(value):
         return value
 
     serialize = identity
     parse_value = identity
 
-    @staticmethod
+
     def parse_literal(ast):
         if isinstance(ast, (StringValueNode, BooleanValueNode)):
             return ast.value
