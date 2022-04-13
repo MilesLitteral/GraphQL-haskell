@@ -1,9 +1,9 @@
-import GraphQL (Undefined)
-import  GraphQL.MountedType (MountedType)
-import  GraphQL.Structures (NonNull)
+import  GraphQL (Undefined)
+import  GraphQL.Types.MountedType (MountedType)
+import  GraphQL.Types.Structures (NonNull)
 import  GraphQL.Utils      (get_type)
 import  GraphQL.Types
 
 class IsInputField mount where
-    __init__ :: GraphQL.Types.InputField
+    initialize :: GraphQL.Types.InputField
     ofType     :: GrapheneType
