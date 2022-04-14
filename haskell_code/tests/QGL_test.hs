@@ -19,8 +19,6 @@ default_format_error err = do
 
 format_execution_result :: GraphQLResult -> GraphQLError -> GraphQLResponse
 format_execution_result execution_result format_error = do
-    if execution_result & execution_result ! errors == Nothing
-        then let response = Nothing 
-        else let response = [format_error(e) for e in execution_result.errors] --execution_result !! errors 
-    let response = unData execution_result
+    if execution_result & execution_result ! errors == Nothing then let response = Nothing else let response = [format_error(e) for e in execution_result.errors] --execution_result !! errors 
+    --let response = unData execution_result
     return response

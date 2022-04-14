@@ -1,12 +1,12 @@
-module Graphene.Types.Argument where
+module GraphQL.Types.Argument where
 
-import Graphene.Types.Dynamic       (Dynamic)
-import Graphene.Types.MountedType   (MountedType)
-import Graphene.Types.Structures    (NonNull)
-import Graphene.Types.Utils         (get_type)
-import Graphene.Types.UnmountedType (UnmountedType)
-import Graphene.Types.Field         (Field)
-import Graphene.Types.InputField    (InputField)
+import GraphQL.Types.Dynamic       (Dynamic)
+import GraphQL.Types.MountedType   (MountedType)
+import GraphQL.Types.Structures    (NonNull)
+import GraphQL.Types.Utils         (get_type)
+import GraphQL.Types.UnmountedType (UnmountedType)
+import GraphQL.Types.Field         (Field)
+import GraphQL.Types.InputField    (InputField)
 
 -- from itertools import chain
 
@@ -48,7 +48,7 @@ newtype Argument = Argument {
 --(MountedType):
 class IsArgument mt where
     __init__     :: Text -> Argument
-    get_type     :: GrapheneType --(self._type)
+    get_type     :: GraphQLType --(self._type)
     __eq__       :: Bool
     to_arguments :: Text -> [GraphQLField]
 

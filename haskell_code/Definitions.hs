@@ -1,4 +1,4 @@
-module Graphene.Types.Definitions where
+module Graphene.Definitions where
 
 import GraphQL  (
         GraphQLEnumType,
